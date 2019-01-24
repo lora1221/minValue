@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr = [];
+    arr[0] = [3, 5, 1, 8, -3, 7, 8];
+    arr[1] = [7, 12, 6, 9, 20, 56, 89];
+    arr[2] = [];
+    arr[3] = [0, 0, 0, 0, 0, 0];
+
+    // Function to return the position of min value
+    function minArray(arr) {
+        let pos = 0;
+        if (arr.length == 0) {
+            pos = -1;
+        } else {
+            let min = arr[0];
+            for (let i = 0, l = arr.length; i < l; i++) {
+                if (arr[i] <= min) {
+                    min = arr[i];
+                    pos = i;
+                }
+            }
+        }
+        return pos;
+    }
+
+
+    var min = [];
+
+    for (let i = 0; i < arr.length; i ++) {
+        min[i] = minArray(arr[i]);
+        if (min[i] == -1) {
+            document.write("There is no element in the array"+i+"<br>");
+        } else {
+            document.write("Min Value of arr"+ i+ " is "+ arr[i][min[i]] + "<br>");
+        }
+    }
+
+</script>
+</body>
+</html>
